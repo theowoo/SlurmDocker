@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update && \
-    apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python && \
+    apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python libcurl3 php5-curl && \
     apt-get autoremove && apt-get autoclean
     
 RUN curl -L -C - -o archives/munge-0.5.12.tar.xz "https://github.com/dun/munge/releases/download/munge-0.5.12/munge-0.5.12.tar.xz" && \
