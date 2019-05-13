@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:17.04
 
 RUN apt-get update && \
     apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python && \
