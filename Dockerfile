@@ -1,5 +1,4 @@
-FROM ubuntu:17.04
-MAINTAINER James McClain <james.mcclain@gmail.com>
+FROM ubuntu:18.04
 
 RUN apt-get update && \
     apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python && \
