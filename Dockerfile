@@ -4,13 +4,9 @@ RUN sed -i -e 's/us.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.li
     apt-get update && \
     apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python curl && \
     apt-get autoremove && apt-get autoclean && \
-    curl -L -C - -o archives/munge-0.5.12.tar.xz "https://github.com/dun/munge/releases/download/munge-0.5.12/munge-0.5.12.tar.xz" && \
-    curl -L -C - -o archives/slurm-17-02-6-1.tar.gz "https://github.com/SchedMD/slurm/archive/slurm-17-02-6-1.tar.gz" && \
-    curl -L -C - -o archives/openmpi-2.1.1.tar.bz2 "https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.bz2"
-    
-COPY archives/munge-0.5.12.tar.xz /root
-COPY archives/slurm-17-02-6-1.tar.gz /root
-COPY archives/openmpi-2.1.1.tar.bz2 /root
+    curl -L -C - -o /root/munge-0.5.12.tar.xz "https://github.com/dun/munge/releases/download/munge-0.5.12/munge-0.5.12.tar.xz" && \
+    curl -L -C - -o /root/slurm-17-02-6-1.tar.gz "https://github.com/SchedMD/slurm/archive/slurm-17-02-6-1.tar.gz" && \
+    curl -L -C - -o /root/openmpi-2.1.1.tar.bz2 "https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.bz2"
 
 RUN mkdir -p /root/local/src && \
     cd /root/local/src && tar axvf /root/munge-0.5.12.tar.xz && cd /root/local/src/munge-0.5.12 && \
