@@ -3,9 +3,9 @@ FROM ubuntu:18.04
 RUN sed -i -e 's/us.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list && \
     apt-get update && \
     apt-get install -y gcc g++ gfortran libgcrypt20-dev libncurses5-dev make python wget && \
-    wget -o /root/munge-0.5.12.tar.xz https://github.com/dun/munge/releases/download/munge-0.5.12/munge-0.5.12.tar.xz && \
-    wget -o /root/slurm-17-02-6-1.tar.gz https://github.com/SchedMD/slurm/archive/slurm-17-02-6-1.tar.gz && \
-    wget -o /root/openmpi-2.1.1.tar.bz2 https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.bz2 && \
+    wget -O /root/munge-0.5.12.tar.xz https://github.com/dun/munge/releases/download/munge-0.5.12/munge-0.5.12.tar.xz && \
+    wget -O /root/slurm-17-02-6-1.tar.gz https://github.com/SchedMD/slurm/archive/slurm-17-02-6-1.tar.gz && \
+    wget -O /root/openmpi-2.1.1.tar.bz2 https://www.open-mpi.org/software/ompi/v2.1/downloads/openmpi-2.1.1.tar.bz2 && \
     apt-get autoremove && apt-get autoclean
 
 RUN mkdir -p /root/local/src && \
